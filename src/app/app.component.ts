@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms'
+import { FormGroup, FormControl, Validators } from '@angular/forms'
+// import { Validators } from '@angular/forms/src/validators';
+
 
 @Component({
   selector: 'app-root',
@@ -6,7 +10,30 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  // title = 'app';
+
+  form;
+  ngOnInit () {
+
+    this.form = new  FormGroup({
+      firstname : new FormControl('', 
+      Validators.compose([
+      Validators.required,
+      Validators.minLength(4),
+      Validators.pattern('[\\w\\-\\s\\/]+')
+    ])),
+      lastname : new FormControl('', this.textValidator),
+      languages : new FormControl('')
+    })
+  }
+
+  textValidator(control){
+    if(control.value.length < 3){
+      return {'lastname': true}
+    }
+  }
+  
+  
+
 
   name = 'Richie'
 
@@ -17,6 +44,8 @@ export class AppComponent {
   foo(e){
     console.warn('works')
     e.preventDefault()
+
+    
   }
 
   onSubmit = function(x){

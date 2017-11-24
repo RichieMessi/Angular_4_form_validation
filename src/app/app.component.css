@@ -1,0 +1,15 @@
+@import '~bootstrap/dist/css/bootstrap.css';
+
+body{
+    padding: 20px;
+    color: bisque;
+
+}
+
+/* input[type='submit']:hover {
+    background-color: #60646D;
+} */
+
+input[type='submit']:disabled {
+    background-color: #60646D;
+}

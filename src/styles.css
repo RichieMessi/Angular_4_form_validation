@@ -1,10 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 /* You can add global styles to this file, and also import other style files */
 
-@import '~bootstrap/dist/css/bootstrap.css';
+ @import '~bootstrap/dist/css/bootstrap.css';
 
 body{
-    padding: 20px;
+    /* padding: 20px; */
     background-color: #65878F;
-    color: bisque;
-}
+    /* color: bisque; */
+} 
